@@ -502,9 +502,9 @@ property <- function(x, envir, null.ok=TRUE,class=NULL) {
 }
 
 .round.distr <- function(distr,digits) {
-  for (s in slotNames(param(distr))) 
-    if (s != "name" && is.numeric(slot(param(distr),s))) 
-      slot(distr@param,s) <- round(slot(param(distr),s),digits)
+  for (s in slotNames(distr@param)) 
+    if (s != "name" && is.numeric(slot(distr@param,s))) 
+      slot(distr@param,s) <- round(slot(distr@param,s),digits)
   distr
 }
 
